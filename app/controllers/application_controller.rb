@@ -29,4 +29,18 @@ def play_paper
     end
     render ({:template => "game_templates/user_paper.html.erb"})
   end
+
+  def play_scissors
+    @comp_move = ["rock", "paper", "scissors"].sample #instance variable
+    
+    if @comp_move == "rock"
+      @outcome = "lost"
+    elsif @comp_move == "paper"
+      @outcome = "won"
+    elsif @comp_move == "scissors"
+      @outcome = "tied"
+    end
+    render ({:template => "game_templates/user_scissors.html.erb"})
+  end
+  
 end
